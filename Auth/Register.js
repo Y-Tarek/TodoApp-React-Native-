@@ -1,33 +1,26 @@
 import React from 'react';
 import {View,Button,Text} from 'react-native';
 import GenerateForm from 'react-native-form-builder';
-
+import SignUpFunc from '../app-func/signup-func';
 
 export default class SignUpScreen extends React.Component{
-// methods of signing up
-
-    register = () => {
-        const formValues = this.formGenerator.getValues();
-        const validation = this.validate(formValues);
-        if(validation){
-            console.log('FORM VALUES', formValues);
-            this.props.navigation.navigate('Login');
-         }else{
-             alert('please fill correct data');
-         }
-    }
-
-     validate(field)  {
-      if(field.email === '' || field.password === ''){
-          return false;
-      }else
-      return true;
-            
-    }
+    
 // Header
     static navigationOptions = {
         title: 'Todo',
     };
+// reristeration data
+    register = () => {
+      const formValues = this.formGenerator.getValues();
+      const validation = new SignUpFunc().validate(formValues);
+      if(validation){
+          console.log('FORM VALUES', formValues);
+          this.props.navigation.navigate('Login'); 
+       }else{
+           alert('please fill correct data');
+       }
+  } 
+
 
  // UI for signingUp 
 
@@ -86,3 +79,5 @@ const styles = {
     },
     
   ];
+
+  

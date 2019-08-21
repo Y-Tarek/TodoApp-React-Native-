@@ -7,6 +7,7 @@ export default class SignInScreen extends React.Component{
   login() {
       const formValues = this.formGenerator.getValues();
       console.log('FORM VALUES', formValues);
+      this.props.navigation.navigate('List');
     }
 
   // Header
