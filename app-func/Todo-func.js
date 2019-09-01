@@ -13,7 +13,7 @@ import {Alert,Modal,View,Text,TouchableHighlight} from 'react-native';
                     onPress: () => console.log('Cancel Pressed'),
                     style: 'cancel',
                 },
-                
+                 
                 {
                     text: 'OK',
                     onPress: () => console.log('OK Pressed')
