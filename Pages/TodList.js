@@ -72,9 +72,9 @@ export default class TodoScreen extends React.Component{
                 /> 
 
             <DialogInput isDialogVisible={this.state.isDialogVisible}
-                        title={"DialogInput 1"}
-                        message={"Message for DialogInput #1"}
-                        hintInput ={"HINT INPUT"}
+                        title={"TodoList"}
+                        message={"Title"}
+                        hintInput ={"Enter a Todo"}
                         submitInput={ (inputText) => {this.sendInput(inputText)} }
                         closeDialog={ () => {this.showDialog(false)}}>
             </DialogInput>

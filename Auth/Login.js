@@ -1,13 +1,20 @@
 import React from 'react';
-import {View,Button,Text} from 'react-native';
+import {View,Button,Text,AsyncStorage} from 'react-native';
 import GenerateForm from 'react-native-form-builder';
+import SignInFunc from '../app-func/signin-func';
 export default class SignInScreen extends React.Component{
-
+  
 // Mehods dor Login Page
   login() {
       const formValues = this.formGenerator.getValues();
-      console.log('FORM VALUES', formValues);
-      this.props.navigation.navigate('List');
+      const validate = new SignInFunc().validate(formValues);
+      
+      if(validate){
+          this.props.navigation.navigate('List');
+         }
+         else{
+            alert('please enter correct data');
+       }
     }
 
   // Header

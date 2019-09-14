@@ -1,5 +1,5 @@
 import React from 'react';
-import {View,Button,Text} from 'react-native';
+import {View,Button,Text,AsyncStorage} from 'react-native';
 import GenerateForm from 'react-native-form-builder';
 import SignUpFunc from '../app-func/signup-func';
 
@@ -8,7 +8,8 @@ export default class SignUpScreen extends React.Component{
 // Header
     static navigationOptions = {
         title: 'Todo',
-    };
+      };
+ 
 // reristeration data
     register = () => {
       const formValues = this.formGenerator.getValues();
@@ -16,6 +17,7 @@ export default class SignUpScreen extends React.Component{
       if(validation){
           console.log('FORM VALUES', formValues);
           this.props.navigation.navigate('Login'); 
+           
        }else{
            alert('please fill correct data');
        }
@@ -24,7 +26,7 @@ export default class SignUpScreen extends React.Component{
 
  // UI for signingUp 
 
- render(){ 
+ render(){  
   return(
      <View style={styles.wrapper}> 
             <View style={{justifyContent:'center',alignItems:'center'}}>
